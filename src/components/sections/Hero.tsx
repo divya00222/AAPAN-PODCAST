@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { motion } from "motion/react";
 import { socialLinks, episodes, podcastStats } from "../../data/podcastData";
 import { Play, Podcast, Youtube, Radio, ArrowUpRight, Sparkles } from "lucide-react";
+import podcastStudioImage from "../../assets/images/podcast_studio_visual_1787386775401.jpg";
 
 export default function Hero() {
   // Find the latest episode or featured episode
@@ -114,7 +115,7 @@ export default function Hero() {
             >
               {/* Local image asset placeholder */}
               <img 
-                src="/src/assets/images/podcast_studio_visual_1787386775401.jpg" 
+                src={podcastStudioImage} 
                 alt="Aapan Podcast Production Studio" 
                 className="w-full h-full object-cover select-none"
               />
