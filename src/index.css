@@ -1,0 +1,130 @@
+@import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Syne:wght@700;800&display=swap');
+
+:root {
+  /* Brand Palette - Deep Burgundy & Warm Golden Orange */
+  --primary: #4a0306;        /* Deep rich burgundy from the banner */
+  --primary-dark: #2e0103;   /* Even darker burgundy shade */
+  --accent: #ff8e15;         /* Golden warm orange inspired by the mic logo */
+  --accent-hover: #ff9d33;   /* Lighter orange for hover states */
+  --background: #0d0203;     /* Dark cinematic background with warm/red tint */
+  --surface: #170709;        /* Warm dark surface card background */
+  --surface-light: #260f12;  /* Slightly lighter surface for nested borders/hover */
+  
+  /* Text colors */
+  --text-primary: #ffffff;
+  --text-secondary: #d1c0c2;  /* Warm tint silver-grey */
+  --text-muted: #8c7376;      /* Subdued label color */
+  
+  /* Utilities */
+  --border: #351316;          /* Elegant dark burgundy border */
+  --border-focus: #ff8e15;
+  --container-width: 1280px;
+}
+
+/* Tailwind CSS v4 custom theme mappings */
+@theme {
+  --font-display: 'Syne', sans-serif;
+  --font-sans: 'Plus Jakarta Sans', sans-serif;
+
+  --color-primary: var(--primary);
+  --color-primary-dark: var(--primary-dark);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-light: var(--surface-light);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+  --color-border: var(--border);
+
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-pulse-slow: pulseSlow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-spin-slow: spinSlow 12s linear infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulseSlow {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.02); }
+}
+
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Custom global rules */
+body {
+  background-color: var(--background);
+  color: var(--text-primary);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom scrollbar matching the burgundy aesthetic */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--surface-light);
+  border-radius: 99px;
+  border: 2px solid var(--background);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+/* Selection colors */
+::selection {
+  background-color: var(--accent);
+  color: var(--background);
+}
+
+/* Input elements styling */
+input, select, textarea {
+  transition: all 0.2s ease-in-out;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: var(--accent) !important;
+  box-shadow: 0 0 0 2px rgba(255, 142, 21, 0.15) !important;
+}
+
+/* Hover effects utility class */
+.premium-card-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.premium-card-hover:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 142, 21, 0.25) !important;
+  box-shadow: 0 12px 30px -10px rgba(74, 3, 6, 0.5);
+}
+
+/* Typography styles */
+.hero-heading {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.section-heading {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
